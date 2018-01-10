@@ -1,0 +1,193 @@
+\documentclass{article}
+\usepackage[utf8]{amssymb}
+\usepackage{ dsfont }
+\usepackage{yfonts}
+\usepackage{ marvosym }
+\usepackage[usenames, dvipsnames]{color}
+\usepackage{hyperref}
+\title{Philosophy 1885: Problem Set 1}
+\author{Tin Oreskovic}
+\date{February 7th 2017}
+\begin{document}
+\maketitle
+\section*{15.1} 
+(i) Show by induction that, in the standard interpretation of the language of arithmetic, $\bar{n}$ always denotes $n$.\\
+\textbf{Base case:}: $\bar{0}$ is equivalent to the expression of zero ``$S$"s followed by a ``0", and so it denotes the number 0.\\
+\textbf{Inductive step:} suppose $\bar{n}$ is the numeral denotes $n$, so $\bar{n}$ is equivalent to a string of $n$ ``$S$"s followed by a ``0". Adding one more ``$S$" before ``0" then gives a string with $n + 1$ ``$S$"s followed by ``0". This latter string then denotes the number $n +1$. Since the string of $n + 1$ ``$S$"s followed by ``0" is equivalent to the expression $\bar{n}+\bar{1}$, $\bar{n}+\bar{1}$ likewise denotes the number $n + 1$    \\
+\\(ii) Show that $\bar{n} + \bar{m}$ always denotes the sum of $n$ and $m$.\\
+\textbf{Base case:} When $n=m=0$,  $\bar{n}$ denotes 0, $\bar{m}$ denotes 0. $\bar{n} + \bar{m}$ is equivalent to a string of $n+m$ (0+0) ``$S$"s followed by a ``0."  So it denotes the number 0.\\
+\textbf{Inductive step:} suppose $\bar{n} + \bar{m}$ is the numeral that denotes $n + m$, so $\bar{n} + \bar{m}$ is equivalent to a string of $n + m$ ``$S$"s followed by a ``0". Adding one more ``$S$" before ``0" then gives a string with $n+m+1$ ``$S$"s followed by ``0". This latter string then denotes the number $n+(m+1)$. Since the string of $n+m+1$ ``$S$"s followed by ``0" is equivalent to the expression $\bar{n} + (\bar{m} + \bar{1})$, $\bar{n} + (\bar{m} + \bar{1})$ denotes the number $n+m+1$. The inductive step for $\overline{(n+1) + (m)$} denoting $(n+1) + (m)$ is very similar.                      \\
+\\(iii) Show that $\bar{n} \times \bar{m}$ always denotes the product of $n$ and $m$.\\
+\textbf{Base case:} When $n=m=0$,  $\bar{n}$ denotes 0, $\bar{m}$ denotes 0. $\bar{n} \times \bar{m}$ is equivalent to a string of $n \times m$ (0) ``$S$"s followed by a ``0."  So it denotes the number 0.\\ 
+\textbf{Inductive step:} Suppose $\overline{n \times m}$ is the numeral that denotes $n \times m$, so $\overline{n \times m}$ is equivalent to a string of $n \times m$ ``$S$"s followed by a ``0". Adding $n$ more ``$S$"s before ``0" then gives a string with $(n) \times (m+1)$ ``$S$"s followed by ``0". This latter string then denotes the number $(n) \times (m+1)$. Since the string of $(n) \times (m+1)$ ``$S$"s followed by ``0" is equivalent to the expression $\overline{(n) \times (m+1)$}, $\overline{(n) \times (m+1)$} likewise denotes the number $(n) \times (m+1)$. The inductive step for $\overline{(n+1) \times (m)$} denoting $(n+1) \times (m)$ is very similar.
+\section*{15.2 Proposition 3.2: \Sigma$ is consistent if, and only if, not every formula is derivable from \Sigma$}
+Suppose \Sigma$ is consistent. Suppose also that every formula is derivable from \Sigma$. 
+Then A is [A$\wedge$ \neg$A] is derivable from $\Sigma$. But then \Sigma$ is inconsistent. So not every formula is derivable from $\Sigma$.\\
+\\
+\textbf{Second direction}:\\
+Let A be any formula. Suppose that not every formula is derivable from \Sigma$. Suppose also that \Sigma$ is inconsistent. Then, there is a formula A is [A \wedge$ \neg$A] derivable from \Sigma$. By the principle of explosion, A (any formula) is derivable from \Sigma$. But since not every formula is derivable from \Sigma$, \Sigma$ is consistent. \square
+
+\section*{15.3 Proposition 3.3: \Sigma$ \vdash$ A iff \Sigma \cup${$\neg$A} is inconsistent }
+\textbf{First direction:} We need to show that $\Sigma \cup${$\neg$A} $\vdash$ `A \wedge$ \neg$A'.\\
+Suppose $\Sigma$ $\vdash$ A.\\
+By the soundness theorem, then, $\Sigma \models$ A \\
+Hence, $\Sigma \cup$ {$\neg$A} \models$ A.\\
+By the completeness theorem, $\Sigma \cup$ {$\neg$A} \vdash$ A.\\
+We also know that $\Sigma \cup$ {$\neg$A} \models$ $\neg$A.\\
+So, by the completeness theorem, $\Sigma \cup$ {$\neg$A} \vdash$ \neg$ A.\\
+Hence, since $\Sigma $\cup$ {$\neg$A} \vdash$ A and $\Sigma \cup$ {$\neg$A} \vdash$ \neg$ A, $\Sigma \cup$ {$\neg$A} \vdash$ A \wedge$ \neg$A\\
+\\
+\textbf{Second direction:}\\
+Suppose  $\Sigma  \cup$ {$\neg$A} \vdash$ B \wedge$ \neg$B.\\
+By the deduction theorem, $\Sigma \vdash$  {$\neg$A} \rightarrow$  B \wedge$ \neg$B.\\
+Now, by the soundness theorem $\Sigma \models$  {$\neg$A} $\rightarrow$  B \wedge$ \neg$B.\\
+We know that {$\neg$A} \rightarrow$  B \wedge$ \neg$B \models$ A.\\
+So, by the completeness theorem, {\neg$A} \rightarrow$  B $\wedge$ $\neg$B \vdash$ A.\\
+Since $\Sigma \vdash$  {$\neg$A} \rightarrow$  B \wedge$ \neg$B and B \wedge$ \neg$B \vdash$ A:\\
+$\Sigma \vdash$ A. \square
+\section*{15.5}
+A theory $\Sigma$ is said to be maximal consistent if it is maximal with respect to consistency. I.e., $\Sigma$ is maximal consistent iff, for every theory $\Theta$ in the same language, if $\Sigma$ is a $proper$ subset of $\Theta$, then $\Theta$ is inconsistent.\\Prove that every complete closed theory is maximal consistent, and that every maximal consistent theory is both complete and closed.}\\
+\\\\
+\\
+\textbf{First direction:} \\Suppose $\Sigma$ is a complete, closed theory, i.e., for all sentences $A$ in the language, either $\Sigma \vdash A$ or $\Sigma \vdash \neg A$, and if $\Sigma \vdash A$, then $A \in \Sigma$.\\
+However, since $\Sigma$ is complete and closed, for every sentence $A$ in the language, either $A \in \Sigma$ or $\neg A \in \Sigma$ (since either $\Sigma \vdash A$ or $\Sigma \vdash \neg A$, and if $\Sigma \vdash A$, then $A \in \Sigma$).Hence, for every sentence $A$ in the language, if $A \in \Sigma,\Sigma \cup \neg A$ is inconsistent (and if $\neg A \in \Sigma,\Sigma \cup A$ is inconsistent). This is so since in either of these cases, for any sentence $A$ in the language, both $A$ and $\neg A$ are derivable from $\Sigma \cup \neg A$ (or from $\Sigma \cup A$, respectively).\\
+So for each sentence $A$ in the language such that $A \notin \Sigma$, $A$ cannot be added to $\Sigma$ without making $\Sigma$ inconsistent. Hence, any theory $\Sigma$ that is complete and closed is also maximal consistent.\\
+\\
+\textbf{Second direction:}
+\\Suppose a theory $\Sigma$ is maximal consistent, i.e., for every theory $\Theta$ in the same language, if $\Sigma$ is a $proper$ subset of $\Theta$, then $\Theta$ is inconsistent. So adding any formula $A$ in the language to $\Sigma$ makes the resulting theory $\Sigma \cup A$ such that any formula in the language can be derivable from $\Sigma \cup A$.\\
+This in turn is the case only if, for any sentence $A$ in the language such that $A \notin \Sigma$, $\Sigma$ \vdash \neg A$. Hence, $\Sigma$ is complete. \\
+But if $\Sigma$ is not also closed, then adding $\neg A$ to $\Sigma$ does not result in an inconsistent theory ($\neg A \cup \Sigma$). However, adding any formula in the language to A maximal consistent theory makes the resulting theory inconsistent. So since $\Sigma$ is maximal consistent, it is also closed. 
+
+
+
+
+
+\section*{15.6 Prove parts (4) to (7) of Proposition 5.2.}\\
+\textbf{(4)} \quad if $n + m \neq k$, Q $\vdash \bar{n} +\bar{m} \neq \bar{k}$\\
+We know from (2) that if $n\neq m$ then $ Q\vdash \bar{n} \neq \bar{m}$. So if $n + m \neq k$ then Q $\vdash \overline{n+m} \neq \bar{k}$.
+
+
+But we know from the proof of (3) that Q proves $\bar{n}+\bar{m}=\bar{z}$ when $n+m=z$. So Q proves that $\bar{n}+\bar{m}=\overline{n+m}$. Hence, since if $n + m \neq k$ then Q  proves that  $\overline{n + m} \neq \bar{k}$, and Q proves that  ($\bar{n}+\bar{m}) = ($\overline{n + m}$), it is also the case that if $n + m \neq k$ then Q $\vdash \bar{n}+\bar{m}\neq\bar{k}$.
+\\
+\\
+\\\textbf{(5)} \quad if $n\times m=k$, then Q $\vdash \bar{n}\times\bar{m}=\bar{k}$\\
+\textbf{Basis:} Showing that if $n\times0 = k$, then Q proves $\bar{n}\times0=\bar{k}$. This follows from Q5\\
+\textbf{Inductive step:} Suppose that Q proves $\bar{n}\times\bar{m}=\bar{k}$ whenever $n \times m=k$. What needs to be shown is that Q proves $\bar{n}\times\overline{(m+1)}=\bar{k}$ when $n \times (m+1)=k$. \\If $k=n \times (m+1)=0$, n=0, so by Q5, Q shows that $\bar{n}\times\overline{(m+1)}=\bar{k}$.\\
+If $k=n \times (m+1)\neq0$ , $\bar{k}$ is $\overline{(n \times m) + n}$ and what needs to be shown is that $\bar{n} \times (\overline{m+1})$ = $\overline{(n \times m)+n)}$. An instance of Q7 is $\bar{n} \times \overline{m+1}$ = $(\bar{n} \times \bar{m})+ \bar{n}$. Since from the proof of (3) we know that Q proves $S(\bar{n}+\bar{m}) = $S(\overline{n+m})$, we know that by Q2 it also shows that $(\bar{n}+\bar{m}) = $(\overline{n+m})$. So $(\bar{n} \times \bar{m})+ \bar{n}$ = $\overline{(n \times m) + n}$.
+\\
+\\\textbf{(6)} \quad if $n \times m \neq k$, Q $\vdash \bar{n} \times \bar{m} \neq \bar{k}$\\
+We know from (2) that if $n\neq m$ then $ Q\vdash \bar{n} \neq \bar{m}$. So if $n \times m \neq k$ then Q $\vdash \overline{n \times m} \neq \bar{k}$.
+
+But we know from the proof of (5) that Q proves $\bar{n} \times \bar{m}=\bar{z}$ when $n\times m=z$. So Q proves that $\bar{n} \times \bar{m}=\overline{n \times m}$. Hence, since if $n 
+\times m \neq k$ then Q  proves that  $\overline{n \times m} \neq \bar{k}$, and Q proves that  ($\bar{n}+\bar{m}) = ($\overline{n \times m}$), it is also the case that if $n \times m \neq k$, Q  $\vdash \bar{n} \times \bar{m} \neq \bar{k}$\\
+
+
+\\\textbf{(7)} \quad if $m < n$, then Q $\vdash \bar{m} < \bar{n}$\\
+\textbf{Basis:} When $m=0$, since $m<n, n\neq 0.$ By Q7, Q $\vdash \bar{n}=\overline{Sy}$. There exists a $k$ such that $n=Sk+m$. So by (1) Q $\vdash \bar{n}=\overline{Sk}+\bar{m} = \overline{Sy}$. It follows from Q8 that Q $\vdash \bar{m}<
+\bar{n}$.\\
+\\
+\textbf{Inductive step:} 
+Suppose Q proves $\bar{m} < 
+\bar{n}$ whenever $m<n$. Showing that Q $\bar{m} < \overline{n+1}$ whenever $m<n+1$. Since $m<n+S0$,  it follows from the inductive hypothesis that Q proves $\bar{m}< \overline{n+S0}$. What has to be shown is that $\overline{n+S0}$ = $\bar{n}+\overline{S0}$. By Q8, $\exists z (\overline{n+S0}= \overline{Sz} + \bar{m})$. Since from the proof of (2) and Q2 we know that Q proves $\overline{n+m}$ = $(\bar{n}+\bar{m})$, Q proves $\exists z (\bar{n}+\bar{S0}= \overline{Sz} + \bar{m})$. By Q8, it follows that $\bar{m}<\overline{Sn$}.
+
+
+
+
+
+
+
+
+\section*{15.7 Show that Q $\nvdash$\forall$$x$$(0 + x = x)$}\\
+Suppose that in addition to the natural numbers $\mathds{N}$, the domain contains the elements A and B such that (domain: $\mathds{N} \cup \{A, B\}$):\\
+\\
+\\
+$S$A = A and $S$B = B\\
+A+$n$=A and B+$n$=B\\
+for all $x$ in the domain, ($x$+A)=B and ($x$+B)=A\\
+A $\times$ 0 = 0 and B $\times$ 0 = 0\\
+A $\times$ A = B and B $\times$ B = B\\
+A $\times$ B = B and B $\times$ A = A\\
+\\
+\\
+
+Axioms 1-8 still hold with this model:\\ \begin{enumerate}
+
+\item 
+$S$A = A $\neq$ 0 and $S$B = B $\neq$ 0\\
+\item 
+($S$A = $S$B = A = B) $\rightarrow$ A = B\\
+\item 
+$A + 0 = A$ and $B + 0 = B$\\
+\item 
+A + $S$B = A+B = A = $S$A =$S$(A+B)\\
+\item 
+A $\times$ 0 = 0 and  B $\times$ 0 = 0\\
+\item 
+A $\times$ $S$A = A $\times$ A  = B = B + A = (A $\times$ A) + A\\ 
+A x $S$B = A $\times$ B  = B = B + A = (A $\times$ B) + A\\
+\item 
+(A $\neq\ 0)  $\rightarrow$  (A = $S$A)\\
+\item 
+(A $<$ B) $\rightarrow$ (B = $S$A + A)\\
+(B = $S$A + A) $\rightarrow$ (A $<$ B)\\
+\\
+However, 0 + A = B. So 0 + A $\neq$ A\\
+Hence, $\nvdash$ \forall x(0 + x = x)}$\\
+
+  
+\end{enumerate}
+
+\\
+\section*{15.8 Proposition 5.3: Q proves all true equalities and inequalities}\\
+Let $t$ and $u$ be arbitrary closed terms of the language of arithmetic (i.e., terms without variables). Then Q proves `$t = u’$' if it is true, and similarly for `$t \neq u$' and `$t < u$'.\\
+\\
+\textbf{Basis:} Q proves every equality of the form '$t = \bar{n}$', where $t$ contains no operator. This is shown by the proof of (1) of proposition 5.2.\\
+\textbf{Inductive step:} Show that Q proves all equalities of the form `$t=\bar{n}$', where $t$ contains any number of operators.\\
+Suppose Q proves it for all such equalities where $t$ contains any number of instances of any single operator...
+
+\section*{15.10 Show that PA proves the commutativity of addition}\\
+Show that $\forall$$x$$\forall$$y$$(x+y = y+x)$.The easiest proof uses induction on $y$, so you want to show is that PA proves $\forall$$x$$(x+0 = 0+x)$ and $\forall$$x$$(x+n = n+x) \rightarrow$ $\forall$$x$$(x + \mathcal{S}n = \mathcal{S}n + x).$\\\\
+A(0) $\wedge$ $\forall$$x$(A($x$) $\rightarrow$ A($S$($x$))) $\rightarrow$ $\forall$$x$A($x$)\\
+A(0): Base case: when x=0, by A3, $x+0=0= 0+x$. Inductive step: Suppose that $\forall x(0+x=0)$. Then $0 + Sx$ = $S(0+x)$ By A4. Finally $S(0+x)=S(x)$, by the inductive hypothesis.\\
+\\
+Suppose that for all $x (x+y=y+x)$. Showing that then for all $x$ $(x+Sy=Sy+x)$: \\
+$x + Sy$ = $S(x+y)$ by A4.\\
+=$(x+y)+1$\\
+=$(y+x)+1$ following the inductive hypothesis.\\
+=$S(y+x)$ = $y + Sx$ = $y + (x + 1)$\\
+$=(x+1) + (y)$ by the inductive hypothesis\\
+$=Sx+y$\\  This was to be shown as an intermediate step.\\
+\\So  $x+Sy=Sx+y$.\\
+However, then $x+Sy$ = $Sx+y$ = $S(x+y)$. So by the inductive hypothesis, the last component $S(x+y)$ is $S(y+x)$.\\
+This, in turn, by A4, is $(Sy+x)$. \\
+Hence, $(x+Sy)$ = $(Sy+x)$.
+
+\section*{15.9 Proposition 5.4: Axiom 7 of Q is provable in Peano Arithmetic}\\Induction schema axiom of PA: 
+A(0) $\wedge$ $\forall$$x$(A($x$) $\rightarrow$ A($S$($x$))) $\rightarrow$ $\forall$$x$A($x$)\\
+\\Axiom 7 of Q: $\forall$ $x$ $(x \neq 0 \rightarrow \exists y (x = Sy$))\\
+So here: A($x$) = $(x \neq 0 \rightarrow \exists y (x = Sy$))\\
+\\
+A($0$):
+$0 \neq 0 \rightarrow \exists y (0 = Sy$))\\
+\\
+Second conjunct to be shown:\\
+($x \neq 0 \rightarrow \exists y (x = Sy))
+\rightarrow (Sx \neq 0 \rightarrow   \exists y(Sx = Sy$)) 
+since the ``small" antecedent ``$(Sx \neq 0$" in the above consequent is equivalent to Axiom 2 of Q:\\
+($x \neq 0 \rightarrow \exists y (x = Sy))
+\rightarrow (\exists y(Sx = Sy$))\\
+\\
+Suppose: $x \neq 0 \rightarrow \exists y (x = Sy)$\\
+which is equivalent to: $x = 0 \vee \exists y (x = Sy)$\\
+\\However, $x = 0 \rightarrow \exists y (Sx = Sy$))\\
+\\
+and $\exists y (x = Sy) \rightarrow \exists y (Sx = Sy$))\\
+\\ Hence: 
+$\forall$$x$($x \neq 0 \rightarrow \exists y (x = Sy))
+\rightarrow (\exists y(Sx = Sy$))\\ 
+\\
+So since A($0$) $\wedge$ $\forall$$x$(A($x$) $\rightarrow$ A($S$($x$))), where A($x$) = $(x \neq 0 \rightarrow \exists y (x = Sy$)):\\
+$\forall$$x$ $(x \neq 0 \rightarrow \exists y (S$x$ = Sy$))$. 
+
+\\
+\end{document}

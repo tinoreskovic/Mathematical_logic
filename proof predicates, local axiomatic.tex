@@ -1,0 +1,109 @@
+\documentclass{article}
+\usepackage[utf8]{amssymb}
+\usepackage{dsfont}
+\usepackage{yfonts}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{marvosym}
+\usepackage{stackengine}
+\usepackage{ tipa }
+\usepackage{mathrsfs}
+\usepackage{hyperref}
+\usepackage{ textcomp }
+\usepackage{ tipa }
+\usepackage{yfonts}
+\title{Philosophy 1885: Problem Set 7}
+\author{Tin Oreskovic}
+\date{May 4th 2017}
+\begin{document}
+\maketitle
+\section*{Exercise 4.1.}
+To show \textbf{(i)} of Theorem 4.5, one needs to distribute the superscript $^{\mathscr{(M})}$ in the definition of Prf$_\alpha$ in 4.1.\\\\
+As Feferman remarks, with each p.r. extension
+$\mathscr{M}$ of $\mathscr{P}$ is associated a formula $\varphi^{\mathscr{(M)}}$ of $\mathscr{M}$ such that $(\sim\varphi)^{\mathscr{(M)}} = \sim(\varphi)^{\mathscr{(M)}}$ and $(\varphi \rightarrow \psi)^{\mathscr{(M)}}$ $= \varphi^{\mathscr{(M)}} \rightarrow \psi^{\mathscr{(M)}}$ [similarly for $\forall$, i.e. $\bigwedge$].\\\\
+Now, since $\varphi \wedge \psi \equiv \sin (\varphi \rightarrow \neg \psi)$, Prf$_\alpha$ is at the``highest level of consideration'' a sequence of conjuncts, a superscript $^{\mathscr{(M)}}$ can be added to the individual conjuncts. Since $\varphi \vee \psi \equiv \neg \varphi \rightarrow \psi)$, the superscript also distributes over the disjuncts. Finally, the superscript also distributes over existential quantifiaction, since $\exists (\varphi) \equiv \neg\forall(\neg\varphi)$.  That it distributes over the smaller constituent elements follows clearly from what has been said about the how the superscript distributes over the conditional, negation, (and generalization.)\\\\
+Now, if $\alpha$ bi-numerates the set of axioms $A$ in $\mathscr{S}$, then $\alpha(x)$ iff $x \in A$, and [by assumption] similarly for notions that occur in the definition of Prf$_\alpha$.\\\\
+We need Prf$_\alpha(x, y)$ iff Prf$_{\mathscr{A}}(x, y)$, that is, iff:\\\\
+$y \in Sq$, which is satisfied by $Sq(y)$, since the later bi-numerates the former,\\
+similarly for $x = (y)_{L(y)-1}$, which is satisfied by $x \approx (y) _{L(y)-1}$ [the last member]\\
+next, for each $i < L(y), (y)_{i} \in F_{mK}$, which is satisfied by $u<L(y) \rightarrow Fm_{k}((y)_{\dot{u}})$\\
+and either:\\\\
+$(y)_{i} \in A_{xK}$\\ or $(y)_{i} \in A$, \\or for some $j, k < i, (y)_{k} = (y)_{j} \rightarrow (y)_{i}$ [each element is either a logical axiom, a member of $A$, or follows from one of the previous member by Modus Ponens].\\\\
+This disjunctive condition, in turn, is satisfied  by $[A_{xK} \vee \alpha((y)_{u}) \vee  \exists v \exists w ( v < u \wedge w < u \wedge (y)_{v} \approx  ((y)_{w} \rightarrow (y)_{u}))$], since all of the utilized notions in $\mathscr{M}$ bi-numerate their respective counterparts. 
+\section*{Exercise 4.2.}
+Part \textbf{(i)} of Theorem 4.7.:\\
+$\vdash_{\mathscr{M}}$ Pr$_{\alpha}(x) \rightarrow$ Fm$_{K}(x)$\\\\
+Since Pr$_{\alpha}(x) = \exists y$Prf$_{\alpha}(x,y)$, and the latter formula sets a condition $\forall u < L(y) \rightarrow Fm_{k}((y)_{u})$, but since the members of the sequence [$Sq(y)$] start with $u = 0$, this includes the ``theorem," that is, $x$ for $(y)_{(L(y)-1)}$ , so $Fm_{k}(x)$.\\\\\\\\
+Part \textbf{(iii)} of Theorem 4.7.:\\
+$\vdash_{\mathscr{M}} \alpha(x) \wedge Fm_{K}(x) \rightarrow Pr_{\alpha}(x)$\\\\
+$Pr_{\alpha}(x) \rightarrow$ for some y $Prf_{\alpha}(x,y).$\\
+Since $Sq(x), L(x) \not\approx \overline{0}$, and by assumption, $Fm_{K}(x)$, and $\alpha(x)_{u}$, \\and $x \approx x_{L(x)-\overline{1}}$ [it is $x_{0}$],\\ $x$ just is the proof of $x$, i.e. Prf$_{\alpha}(x,x).$, so Pr$_{\alpha}(x)$
+\\\\\\\\
+Part \textbf{(i)} of Theorem 4.8.:\\
+$\vdash_{\mathscr{M}} \forall x (\beta(x) \wedge Fm_{K}(x) \rightarrow \alpha(x)) \rightarrow \forall x(Pr_{\beta}(x) \rightarrow Pr_{\alpha}(x))$\\\\
+Suppose $\vdash_{\mathscr{M}} \forall x (\beta(x) \wedge Fm_{K}(x) \rightarrow \alpha(x))$. Suppose also Pr$_{\beta}(x)$.\\
+Now, if Pr$_{\beta}(x)$, then $Fm_{K}(x)$ [this follows from the definitions of Pr$_{\beta}(x)$ and Prf$_{\beta}(x)$].\\\\
+Since Pr$_{\beta}(x)$, either Bx$_{K}(x)$, or $\beta(x)$, or\\ $\exists v \exists w ( v < x \wedge w < x \wedge (y)_{v} \approx  ((y)_{w} \rightarrow x))$.\\\\\
+If Bx$_{K}(x)$, clearly Pr$_{\alpha}(x)$, for the logical axioms of B are same as those of A.\\
+If $\beta(x)$, then since we have also shown that  $Fm_{K}(x)$, it follows from the antecedent of the theorem to be shown that $\alpha(x)$, but then, it follows from $Fm_{K}(x)$ and $\alpha(x)$ by \textbf{(iii)} of 4.7 that Pr$_{\alpha}(x)$.\\\\
+Finally, if $\exists v \exists w ( v < x \wedge w < x \wedge (y)_{v} \approx  ((y)_{w} \rightarrow x))$, then, it follows by one of the two cases shown above shows for both $v$ and $w$ that they are $Fm_{K}(v, w)$ and that each is either  $\in Bx_{K}$ or $\in B$. Again, if $x$ follows from two elements of $Bx_{K}$, then it also follows from $Ax_{K}$. If, on the other hand, $x$ follows from two elements of $B$, then from $\beta(v, w)$ and $Fm_{v, w}$ it follows (by assumption) that $\alpha(v, w)$, and then again from \textbf{(iii)} of 4.7 that Pr$_{\alpha}(v, w)$.[the case where $ v\in B$ and $w \in Bx_{K}$ is similar]. At any rate then, by modus ponens, one can get to $x$, so  Pr$_{\alpha}(x)$.
+\section*{Exercise 4.3.}
+Since $\alpha$ bi-numerates  $A$ in $\mathscr{S}$,\\\\ \textbf{(1)} $\vdash_{\mathscr{S}} \alpha(x)$  iff  $[A](x)$\\\\
+by stregthening the antecedent of the ``$\rightarrow$" direction in \textbf{(1)}, if \\$\vdash_{\mathscr{S}} \alpha(x) \wedge x \leq \overline{n}$  then  $[A](x)$.\\
+Then, by definition 4.3, $[A](x)$ is a BPF formula, and, by lemma 3.10, hence, $[A](x)$ implies $\vdash_{\mathscr{S}} [A](x)$. So, assuming $\vdash_{\mathscr{S}} \alpha(x) \wedge x \leq \overline{n}$ [by the deduction theorem and its reverse], \\
+$\vdash_{\mathscr{S}} \alpha(x) \wedge x \leq \overline{n} \rightarrow [A](x)$.\\\\
+Now, assuming $\vdash_{\mathscr{S}} \alpha(x) \wedge x \leq \overline{n}$, since then $\vdash_{\mathscr{S}} x \leq \overline{n}$ and $[A](x)$ is the formula $x \approx \overline{k_0} \vee . . . \vee x \approx \overline{k_{z - 1}}$ for some finite set $A = \{k_{0}, ..., k_{n}, ... k_{z-1}\}$:\\ $\neg (x \approx \overline{k_{n+1}} \vee . . . \vee x \approx \overline{k_{z - 1}})$. From this it follows that:\\
+
+$\vdash_{\mathscr{S}} \alpha(x) \wedge x \leq \overline{n} \rightarrow (x \approx \overline{k_0} \vee . . . \vee x \approx \overline{k_{n}})$, and so
+
+$\vdash_{\mathscr{S}} \alpha(x) \wedge x \leq \overline{n} \rightarrow [A](x\upharpoonright n)$\\\\
+Since $\alpha$ bi-numerates  $A$ in $\mathscr{S}$,\\\\\textbf{(2)} $\vdash_{\mathscr{S}} \neg\alpha(x)$  iff  $\neg[A](x)$\\\\
+Then, by theorem 3.7(i), the negation of $[A](x)$, i.e., $\neg[A](x)$, is a BPF formula too, and, by lemma 3.10, hence, $\neg[A](x)$ implies $\vdash_{\mathscr{S}} \neg[A](x)$.\\
+So $\vdash_{\mathscr{S}}\neg\alpha(x)$ iff $\vdash_{\mathscr{S}} \neg[A](x).$\\
+$\neg\alpha(x)\vdash_{\mathscr{S}}\neg[A](x)$ by the reverse of the deduction theorem, whence, by the deduction theorem: $\vdash_{\mathscr{S}} \neg\alpha(x) \rightarrow \neg[A](x)$.\\\\
+But since $\neg[A](x)$ is the formula $\neg(x \approx \overline{k_0} \vee . . . \vee x \approx \overline{k_{z - 1}})$ for some finite set $A = \{k_{0}, ..., k_{n}, ... k_{z-1}\}$, $\neg[A](x)$ is thus:\\ $\neg (x \approx \overline{k_0}) \wedge . . . \wedge \neg(x \approx \overline{k_{n}})\wedge ... \wedge \neg(x \approx \overline{k_{z - 1}})$. From this it trivially follows that: $\neg (x \approx \overline{k_0}) \wedge . . . \wedge \neg(x \approx \overline{k_{n}})$, which is just the formula $\neg[A\upharpoonright n](x)$, so:\\
+$\vdash_{\mathscr{S}} \neg\alpha(x) \rightarrow \neg[A\upharpoonright n](x)$\\\\
+The above is equivalent to its contrapositive, so: $\vdash_{\mathscr{S}} [A\upharpoonright n](x) \rightarrow \alpha(x)$\\
+But if we assume $[A\upharpoonright n](x)$, then both, by the above, $\alpha(x)$, and\\ $\neg(x \approx \overline{k_{n}})\wedge ... \wedge \neg(x \approx \overline{k_{z - 1}})$, so:\\
+
+$\vdash_{\mathscr{S}} [A\upharpoonright n](x) \rightarrow \alpha(x) \wedge x \leq \overline{n}$\\\\
+Since both $\vdash_{\mathscr{S}} \alpha(x) \wedge x \leq \overline{n} \rightarrow [A](x\upharpoonright n)$ and $\vdash_{\mathscr{S}} [A\upharpoonright n](x) \rightarrow \alpha(x) \wedge x \leq \overline{n}$, it follows, QED:\\
+$\vdash_{\mathscr{S}} [A\upharpoonright n](x) \equiv \alpha(x) \wedge x \leq \overline{n}$
+\section*{Exercise 4.4.}
+If $\alpha(x)$ numerates $A$, but does not bi-numerate it, only \textbf{(1)} from above, i.e. $\vdash_{\mathscr{S}} \alpha(x)$  iff  $[A](x)$, holds, but not \textbf{(2)}: $\vdash_{\mathscr{S}} \neg\alpha(x)$  iff  $\neg[A](x)$\\This clearly still allows one to prove $\vdash_{\mathscr{S}} \alpha(x) \wedge x \leq \overline{n} \rightarrow [A](x\upharpoonright n)$, since the first part of the proof above [in exercise 4.3.] did not make use \textbf{(2)}; however, one cannot show the other direction of the bi-conditional if $\alpha$ merely numerates $A$, i.e., just (under the hypotheses of the theorem) making use of \textbf{(1)}. When $\neg[A](x)$, using \textbf{(1)}, it follows that $\nvdash_{\mathscr{S}} \alpha(x)$, but this is not the same as $\vdash_{\mathscr{S}} \neg\alpha(x)$.\\\\
+By the first part of exercise 4.3., if $\vdash_{\mathscr{S}} \alpha(x)$  iff  $[A](x)$, then\\
+$\vdash_{\mathscr{S}} \alpha(x) \wedge x \leq \overline{n} \rightarrow [A](x\upharpoonright n)$ and $\vdash_{\mathscr{S}} \neg[A](x\upharpoonright n)  \rightarrow \neg(\alpha(x) \wedge x \leq \overline{n})$\\ For some finite set $A$, then $\vdash_{\mathscr{S}} [\neg (x \approx \overline{k_0}) \wedge . . . \wedge \neg(x \approx \overline{k_{n}})] \rightarrow \neg(\alpha(x) \wedge x \leq \overline{n})$
+\\\\\\Now, for $\vdash_{\mathscr{S}} [A\upharpoonright n](x) \equiv \alpha(x) \wedge x \leq \overline{n}$ to hold, it has to be the case that:\\
+$\vdash_{\mathscr{S}} \neg(\alpha(x) \wedge x \leq \overline{n}) \rightarrow \neg[A\upharpoonright n](x)$\\\\
+But suppose $\vdash_{\mathscr{S}} \neg(\alpha(x) \wedge x \leq \overline{n})$, i.e., $\vdash_{\mathscr{S}} \neg\alpha(x) \vee x > \overline{n}$\\
+In case $\vdash_{\mathscr{S}} x > \overline{n}$, clearly $\vdash_{\mathscr{S}}\neg (x \approx \overline{k_0}) \wedge . . . \wedge \neg(x \approx \overline{k_{n}})$\\
+When $\vdash_{\mathscr{S}} \neg\alpha(x)$, however, it is consistent with \textbf{(1)} that $[A](x)$, i.e., \\$x \approx \overline{k_0} \vee . . . \vee x \approx \overline{n}\vee... \vee x \approx \overline{k_{z - 1}}$, and hence \\
+$\nvdash_{\mathscr{S}} \neg(\alpha(x) \wedge x \leq \overline{n}) \rightarrow \neg(x \approx \overline{k_0} \vee . . . \vee x \approx \overline{n})$ and\\ $\nvdash_{\mathscr{S}} \neg(\alpha(x) \wedge x \leq \overline{n}) \rightarrow \neg[A\upharpoonright n](x)$.
+\section*{Exercise 4.5.}
+Suppose that $\mathscr{A}=<A,K>, A\subseteq St_{K}, \mathscr{Q}\subseteq \mathscr{A}$, and that $\mathscr{A}$ is consistent. Suppose also that $\alpha$ numerates $A$ in $\mathscr{S}$, where $\mathscr{Q}\subseteq\mathscr{S}\subseteq\mathscr{A}$.\\\\
+Since $\alpha$ numerates $A$ in $\mathscr{S}$, by theorem 4.5 (i) [which has been shown in exercise 4.1.], $\vdash$ $_{\mathscr{S}}$ Prf$_{\alpha}(x,y)$ iff \textit{Prf}$_{\mathscr{A}}(x,y)$. $\mathscr{S}\subseteq\mathscr{A}$, so if Prf$_{\alpha}$ numerates \textit{Prf}$_{\mathscr{A}}$ in $\mathscr{S}$, it does it in $\mathscr{A}$ too, since ${\mathscr{A}}$ proves all the theorems of $\mathscr{S}$, wherefore:\\
+\textbf{(1)} \quadd $\vdash$ $_{\mathscr{A}}$ Prf$_{\alpha}(x,y)$ iff \textit{Prf}$_{\mathscr{A}}(x,y)$.\\\\
+According to definition 5.2., $\vdash_{\mathscr{A}} v_{\alpha} \equiv \sim$ Pr$_{\alpha}(\overline{v_{\alpha}})$, i.e.\\
+\textbf{(2)} $\vdash_{\mathscr{A}} v_{\alpha} \equiv \sim \exists y$Prf$_{\alpha}(\overline{v_{\alpha}}, \overline{y})$. $\quadd \vdash_{\mathscr{A}} \sim v_{\alpha} \equiv \exists y$Prf$_{\alpha}(\overline{v_{\alpha}}, \overline{y})$\\\\
+Now, suppose that for some y, \textit{Prf}$_{\mathscr{A}}(v_{\alpha},y)$; thence, by \textbf{(1)} from above,\\ $\vdash$ $_{\mathscr{A}}$ Prf$_{\alpha}(\overline{v_{\alpha}},\overline{y})$ and $\vdash$ $_{\mathscr{A}}$ Pr$_{\alpha}(\overline{v_{\alpha}})$ \\ but then, $\vdash_{\mathscr{A}} \sim (\sim \exists y$Prf$_{\alpha}(\overline{v_{\alpha}}, \overline{y}))$, so [by \textbf{(2)}], $\vdash_{\mathscr{A}} \sim v_{\alpha}$.\\ From the fact that $\mathscr{A}$ is consistent, then, it follows also that: not $\vdash_{\mathscr{A}} v_{\alpha}$\\Suppose to the contrary that for no y does: \textit{Prf}$_{\mathscr{A}}(v_{\alpha},y)$. Clearly, then, not $\vdash_{\mathscr{A}} \alpha$. In either case, QED, $\vdash_{\mathscr{A}} \alpha$.
+
+
+\section*{Exercise 4.6.}
+Let $\mathcal{T}$ be an infinite set of sentences, and let $\mathcal{T'}$ be a finite set such that $\mathcal{T'}\vdash A$ iff $\mathcal{T}\vdash A$.\\\\\
+Now, if $\mathcal{T}\vdash A$, for any $A$, only a finite set of sentences can be used in its derivation from $\mathcal{T}$, with this finite set, call it $\mathcal{F}_1 \subseteq \mathcal{T}$. Now take the union of all the finite subsets $\mathcal{F}_1, ..., \mathcal{F}_n$ of $\mathcal{T}$ that are used in proofs of each of the theorems of $\mathcal{T}$. To show that this union is finite consider the following:\\
+
+Suppose two sets $\mathcal{F}$ and $\mathcal{G}$ are finite, and that they have no common elements, i.e. $\mathcal{F} \cap \mathcal{G}= \varnothing$. When [base case] one of the sets, say $\mathcal{F}$, is $\varnothing$, ``moving" one element, call it $h$, from $\mathcal{G}$ to $\mathcal{F}$ gives $\mathcal{G} - h$, and $\mathcal{F} = h$, both of which are clearly finite. $\mathcal{F} \cup \mathcal{G}$ = $\mathcal{G}$ = $[\mathcal{G} - h] \cup h$. Since $\mathcal{G}$ is by hypothesis finite, so is $\mathcal{F} \cup \mathcal{G}$.
+
+[inductive step:] Assume that when the cardinality of $\mathcal{F}$ is $n$ and of $\mathcal{G}$ is $z$,moving one element $h$ from $\mathcal{G}$ to $\mathcal{F}$ results in two finite sets such that $\mid\mathcal{F}_{n+h}\mid = n+h$, $\mid\mathcal{G}_{z-h}\mid = z-h$, and $\mathcal{F}_{n+h} \cup \mathcal{G}_{z-h}$ is finite:\\ since $\mathcal{F}_{n+h}$ is finite, adding one more element $k$ to it results in a finite set $\mathcal{F}_{n+h+k}$, while removing it from the finite set $\mathcal{G}_{z-h}$ gives the finite set $\mathcal{G}_{z-h-k}$.\\
+Clearly, $\mid\mathcal{F}_{n+h} \cup \mathcal{G}_{z-h}\mid = n+z$ and $\mid\mathcal{F}_{n+h+k} \cup \mathcal{G}_{z-h-k}\mid = n+z$ too, so since the former is finite, the latter union is finite too.\\
+
+Now suppose [the other case] that $\mathcal{F}$ and $\mathcal{G}$ are finite sets that do have some common elements, $\mid\mathcal{F}\mid = n$ and $\mid\mathcal{G}\mid = z$.\\
+$\mathcal{F} \cup \mathcal{G} = \mathcal{F} \cup (\mathcal{G} - \mathcal{F})$ and  $(\mathcal{G} - \mathcal{F}) \subseteq \mathcal{G}$ is finite (as a subset of a finite set). Suppose $\mid(\mathcal{G} - \mathcal{F})\mid = j$.\\
+Then $\mid\mathcal{G} \cup \mathcal{F}\mid = n+j$. Since both $n$ and $j$ are natural numbers, $\mathcal{G} \cup \mathcal{F}$ is likewise finite.\\\\
+Returning to the union $\mathcal{U}$ of all the finite subsets $\mathcal{F}_1, ..., \mathcal{F}_n$ of $\mathcal{T}$ that are used in proofs of each of the theorems of $\mathcal{T}$, it is now shown that the union of all of these subsets is finite. Since $\mathcal{T'}\vdash A$ iff $\mathcal{T}\vdash A$, and $\mathcal{T}\vdash A$ iff $\mathcal{U}\vdash A$:\\
+$\mathcal{T'}\vdash A$ iff $\mathcal{U}\vdash A$.\\\\
+Now, if $\mathcal{T}$ is reflexive, then for each finite subset $\mathcal{S}$ of $\mathcal{T}$, including $\mathcal{U} \subseteq \mathcal{T}$,\\
+
+$\vdash_{\mathscr{T}} $Con$_{\mathcal{[S]}}$\\
+By Theorem 5.6, as Feferman remarks, it follows that if $\mathcal{T}$ is reflexive, no finite subset of $\mathcal{T}$ axiomatizes $\mathcal{T}$, otherwise it woudl violate the second incompleteness theorem (by proving its consistency). With the proof above, however, we know that no other finite set $\mathcal{T'}$ axiomatizes $\mathcal{T}$ either. If it did, then $\mathcal{U}$ would too, but that is shown never to be the case.
+\end{document}

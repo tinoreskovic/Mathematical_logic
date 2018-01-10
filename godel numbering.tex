@@ -1,0 +1,156 @@
+\documentclass{article}
+\usepackage[utf8]{amssymb}
+\usepackage{dsfont}
+\usepackage{yfonts}
+\usepackage{marvosym}
+\usepackage{ tipa }
+\usepackage{hyperref}
+\title{Philosophy 1885: Problem Set 2}
+\author{Tin Oreskovic}
+\date{February 20th 2017}
+\begin{document}
+\maketitle
+\section*{15.11 Show that condition (ii) in Definition 6.3 actually follows from condition (i)}
+A formula  $\Phi(x_1, . . . , x_n, y)$ defines the n-place function
+$\varphi(x_1, . . . , x_n)$ in the language of arithmetic if, and only if,\\
+\\(i)  $\Phi(k_1,...,k_n,m)$ is true iff $\varphi(k_1,...,k_n) = m$\\
+(ii)$\forall$$x$$\forall$$y$$\forall$$z$ $[\Phi(x_1,...,x_n,y) \wedge \Phi(x_1,...,x_n, z) \rightarrow y = z]$\\\\
+Suppose for some formula $\Phi(x_1,...,x_n,y)$ is true iff $\varphi(x_1,...,x_n) = y$, that is, condition (i) is satisfied.\\
+Since $\varphi$ is a function, if $\varphi(x_1,...,x_n) = y$ and $\varphi(x_1,...,x_n) = z$, then $y = z$.\\\\
+By condition (i), if $\Phi(x_1,...,x_n,y)$ is true, then $\varphi(x_1,...,x_n) = y$; and if $\Phi(x_1,...,x_n,z)$ is true, then $\varphi(x_1,...,x_n) = z$.\\
+So if $\Phi(x_1,...,x_n,y)$ is true and $\Phi(x_1,...,x_n,z)$ is true, then $\varphi(x_1,...,x_n) = y$ and $\varphi(x_1,...,x_n) = z$.\\\\
+However, since if $\varphi(x_1,...,x_n) = y$ and $\varphi(x_1,...,x_n) = z$, then $y = z$, then, by transitivity:\\
+if $\Phi(x_1,...,x_n,y)$ and $\Phi(x_1,...,x_n, z)$, then $y = z$.
+\section*{15.12 Prove Proposition 6.7:}
+(1) A set or relation is definable in the language of arithmetic iff its characteristic function is definable in the language of arithmetic.\\
+(2) A set or relation is representable in $\Sigma$ iff its characteristic function is representable in  $\Sigma$.\\
+\\
+\textbf{Definition:} Let $s$ be a set. Its characteristic function is the function $\varphi_s'(x)$ whose value is 1 if $x \in s$ and 0 if $x \notin s$. Similarly, if $r$ is an $n$-place relation, its characteristic function is the $n$-place function $\varphi_r(x_1, . . . , x_n)$ whose value, for arguments $k_1,...,k_n$ is 1 if $r(k_1,...,k_n)$ and 0 otherwise.
+\\\\
+\textbf{(1)\\ first direction:}\\
+Suppose the characteristic function of a relation $F(x_1, . . ., x_n)$ is definable in the language of arithmetic. What is to be shown is that there is some formula $\Phi$ such that it is true iff $F(x_1, . . ., x_n)$.\\\\
+Since the characteristic function $\varphi$ of $F$ is definable in the language of arithmetic, $\Phi(x_1,...,x_n,1)$ is true iff $\varphi(x_1,...,x_n) = 1$\\\\
+However $\varphi(x_1,...,x_n) = 1$ iff $F(x_1, . . ., x_n)$, so:\\
+$F(x_1, . . ., x_n)$ iff $\Phi(x_1,...,x_n,1)$, and $\Phi$ defines the relation in the language of arithmetic.\\\\
+\textbf{second direction:}\\
+Suppose the relation $F(x_1, . . ., x_n)$ is defined in the language of arithmetic by some formula $\Phi(x_1,...,x_n)$. What is to be shown is that there is some formula such that it is true iff $\varphi(x_1, . . ., x_n) = 1$.\\
+Now since, the relation $F$ is defined in the language of arithemtic by $\Phi(x_1,...,x_n)$, $\Phi(x_1,...,x_n)$ is true iff $F(x_1, . . ., x_n)$.\\\\
+However, the characteristic function of $F(x_1, . . ., x_n)$ is definable in the language of arithmetic if there is a formula such that it is true iff $\varphi(x_1, . . ., x_n) = 1$. \\\\
+Since $\varphi(x_1, . . ., x_n) = 1$ iff $F(x_1, . . ., x_n)$, and $F(x_1, . . ., x_n)$ iff $\Phi(x_1,...,x_n)$ is true:\\ 
+$\Phi(x_1,...,x_n)$ is true iff $F(x_1, . . ., x_n)$, so there is a formula that defines the characteristic function of the relation.\\\\
+\textbf{(2)\\
+first direction:}\\
+Suppose the characteristic function of the relation $F(x_1, . . ., x_n)$ is represented in $\Sigma$. Showing that there is a formula $\Phi$ that represent the relation $F(x_1, . . ., x_n)$:\\\\
+If $\varphi(x_1, . . ., x_n) = 1$ then $\Sigma \vdash $\Phi(x_1,...,x_n, 1)$.\\
+Suppose $F(x_1, . . ., x_n)$. Then $\varphi(x_1, . . ., x_n) = 1$ and $\Sigma \vdash $\Phi(x_1,...,x_n, 1)$, so whenever 
+$F(x_1, . . ., x_n)$, there is a formula $\Phi$ such that $\Sigma \vdash $\Phi(x_1,...,x_n, 1)$.\\\\
+Suppose it is not the case that $F(x_1, . . ., x_n)$. Then $\varphi(x_1, . . ., x_n) = 0$ and $\Sigma \vdash$  $\neg \Phi(x_1,...,x_n,0)$. So whenever 
+$\neg F(x_1, . . ., x_n)$, there is a formula $\Phi$ such that $\Sigma \vdash$  $\neg\Phi(x_1,...,x_n, 1)$.\\\\
+\textbf{second direction:}\\
+Suppose the relation $F(x_1, . . ., x_n)$ is represented in $\Sigma$. Showing that there is a formula $\Phi$ that represent the characteristic function $\varphi$ of the relation $F(x_1, . . ., x_n)$:\\\\
+Suppose $\varphi(x_1, . . ., x_n) = 1$. Then $F(x_1, . . ., x_n)$, and $\Sigma \vdash $\Phi(x_1,...,x_n)$, so whenever 
+$\varphi(x_1, . . ., x_n) = 1$, there is a formula $\Phi$ such that $\Sigma \vdash $\Phi(x_1,...,x_n)$.\\\\
+Suppose that $\varphi(x_1, . . ., x_n) = 0$. Then $\neg F(x_1, . . ., x_n)$,  and $\Sigma \vdash$  $\neg \Phi(x_1,...,x_n)$. So whenever $\varphi(x_1, . . ., x_n) \neq 1$ there is a formula $\Phi$ such that $\Sigma \vdash$  $\neg\Phi(x_1,...,x_n)$.
+\section*{15.13 Prove Theorem 6.8 using Theorem 4.6.}
+\textbf{Theorem 6.8} Suppose that the function $\phi (x)$ is represented in $\Sigma$ by the
+formula $F(x, y)$. Suppose further that $\Sigma$ proves:\\
+\\
+$\forall x \forall y \forall z (F(x,y) \wedge F(x,z) \rightarrow y = z)$\\
+$\forall x \exists y (F(x,y))$\\
+\\
+Expand the language of $\Sigma$ by adding a new function symbol $f(x)$ and let $\Sigma_f$ be $\Sigma$ plus the new axiom: \\
+$f(x) = y \equiv F(x,y)$\\
+Then $\Sigma_f$ is a conservative extension of $\Sigma$
+\\
+\\
+\textbf{Theorem 4.6}\\
+If every model of $\mathcal{T}$ can be expanded to a model of $\mathcal{T}$*, then $\mathcal{T}$* is a conservative extension of $\mathcal{T}$.\\
+\\\textbf{proof:}
+Suppose there is a formula $\gamma^*$ in $\Sigma_f$. Now, either $\gamma^*$ contains at least one occurrence of the function $f(x)$, i.e., $f(x)=y$ or it does not. If it does, suppose that a formula $\gamma$ is obtained by replacing all occurrences of $f(x)=y$ in $\gamma^*$ by the formula $F(x,y)$. \\Now, formulas represented in  $\Sigma_f$ that are not formulas represented in $\Sigma$ are exactly the formulas such as $\gamma^*$, with one or more occurrences of $f(x)=y$.\\However, by the ``new axiom'' of $\Sigma_f$, $f(x)=y$ and $F(x,y)$ are equivalent. So every such formula (of the form of) $\gamma^*$ represented in $\Sigma_f$ but not in $\Sigma$ is equivalent to a formula (of the form of) $\gamma$ represented in $\Sigma$, which is shown by the above-described procedure.\\\\
+Showing that every model $\mathcal{M}$ of $\Sigma$ can be expanded to a model $\mathcal{M}^*$ of $\Sigma_f$:\\\\ \textbf{(z):} Since $f(x) = y \equiv F(x,y)$, every model $\mathcal{M}^*$ of $\Sigma_f$ must assign the same values as $\mathcal{M}$ to all the symbols in $f(x)=y$ and $F(x,y)$.\\\\
+The only formulas represented $\Sigma_f$ that are not formulas represented in $\Sigma$ are exactly of the form of $\gamma^*$, so taking the assignment of values to symbols in the language of $\Sigma$ and assigning other values to additional symbols of $\Sigma_f$, by \textbf{(z)}, produces a model of $\Sigma_f$.\\ Since such models of $\Sigma_f$ are expansion of models $\mathcal{M}$ of $\Sigma$, by theorem 4.6, $\Sigma_f$ is a conservative extension of $\Sigma$. 
+
+
+\section*{15.14 Prove Corollary 8.2:}
+\textbf{Lemma 8.1} Let $\phi(s_1, . . . , s_n)$ be a computable n-place function from strings to strings. Then there is a formula $\phi(x_1, . . . , x_n, y)$ of the language
+of arithmetic that represents it in Q, in the sense that, whenever
+$\phi(s_1, . . . , s_n) = t$ and $\sigma_1, . . . , \sigma_n$ and $\tau$ are the G\"odel numbers of $s_1, . . . , s_n$
+and $t$, respectively:\\\\
+(i) Q $\vdash $\phi(\overline{\sigma_1}, . . . \overline{\sigma_n}, \overline{\tau})$\\
+(ii) Q $\vdash $\forall x (\phi(\overline{\sigma_1}, . . . \overline{\sigma_n}, x) \rightarrow x = \overline{\tau}$\\\\
+\textbf{Corollary 8.2}
+Let $\varphi(s_1,...,s_n)$ be a computable n-place relation on strings. Then there is a formula  $\Phi(x_1, . . . , x_n)$ of the language of arithmetic that represents it in Q, in the sense that, where  $\sigma_1, . . . ,  \sigma_n$ are the G\"odel numbers of $s_1,...,s_n$:\\
+\\
+(i) whenever $\varphi(s_1, . . ., s_n),$ Q$\vdash \Phi (\overline{\sigma_n}, . . . , \overline{\sigma_n})$\\
+(ii) whenever $\neg \varphi(s_1, . . ., s_n),$ Q$ \vdash \neg \Phi (\overline{\sigma_1}, . . . , \overline{\sigma_n})$\\\\
+If $r$ is an $n$-place relation, its characteristic function is the $n$-place function $\varphi_r(x_1, . . . , x_n)$ whose value, for arguments $k_1,...,k_n$ is 1 if $r(k_1,...,k_n)$ and 0 otherwise. This definition of a characteristic function of a relation $r$ alludes to an algorithm that computes, given the arguments, what its value is, so it is computable. Hence, by Lemma 8.1, the characteristic function of the relation $r$ is represented in Q by some formula $\Phi$.\\
+By exercise 15.12.2, a relation $r$ is representable in $\Sigma$ iff its characteristic function is representable in $\Sigma$. So there is a formula of the language of arithmetic that represents the relation $r$ in Q.
+\section*{15.15 Let $\Sigma$ be an arbitrary theory. Prove the following facts
+about its closure:}
+\textbf{(i)} $Cl(\Sigma)$ is closed.\\\\
+To be shown: $A \in Cl(\Sigma)$ iff $Cl(\Sigma) \vdash A$.\\ Suppose $A \in Cl(\Sigma)$. Then, trivially, $Cl(\Sigma) \vdash A$.\\\\
+For the other direction, suppose $Cl(\Sigma) \vdash A$.\\\\ Then, either $A \in Cl(\Sigma)$ or $A \notin Cl(\Sigma)$.\\ If $A \in Cl(\Sigma)$, the proof is completed.\\ If  $A \notin Cl(\Sigma)$, then either $\Sigma \vdash A$ or $\Sigma \nvdash A$. But it cannot be that $\Sigma \vdash A$, since then $A \in Cl(\Sigma)$, but by hypothesis $A \notin Cl(\Sigma)$. If $\Sigma \nvdash A$, then   $Cl(\Sigma) \nvdash A$, since $\Sigma \subseteq Cl(\Sigma)$.\\ But, by hypothesis $Cl(\Sigma) \vdash A$, so $A \in Cl(\Sigma)$.
+\\\\
+\\
+\textbf{(ii)} $Cl(\Sigma) = Cl(Cl(\Sigma))$.\\\\
+Consider an arbitrary theorem $A$ $\in$ $Cl(Cl(\Sigma))$. So $Cl(\Sigma) \vdash A$. Hence either $A \in Cl(\Sigma)$ or $A \notin Cl(\Sigma)$. \\ 
+Suppose $A \notin Cl(\Sigma)$. Then $\Sigma \nvdash A$. But by (i), $A \in Cl(\Sigma)$ iff $Cl(\Sigma) \vdash A$. So $Cl(\Sigma) \nvdash A$. However, by assumption, $Cl(\Sigma) \vdash A$, so for any theorem $A \in Cl(Cl(\Sigma))$, $A \in Cl(\Sigma)$.\\
+So $Cl(Cl(\Sigma) = Cl(\Sigma)$.
+\\
+\\
+\textbf{(iii)} Suppose $\Theta \supseteq 
+\Sigma$, and that $\Theta$ is closed. Then $\Theta \supseteq 
+Cl(\Sigma)$.\\\\
+Suppose $\Theta \supseteq 
+\Sigma$. So $\Sigma \subseteq \Theta$. Suppose further that $\Theta$ is closed.\\
+To be shown: $Cl(\Sigma) \subseteq \Theta$ [for convenience]\\\\
+Since $\Sigma \subseteq \Theta$, either $\Sigma = \Theta$ or $\Sigma \neq \Theta$\\ Now, if $\Sigma = \Theta$, by  \textbf{(ii)} and the hypothesis that $\Theta$ is closed, $Cl(\Sigma) = \Theta$. So $Cl(\Sigma) \subseteq \Theta$.\\\\
+If on the other hand $\Sigma \neq \Theta$ [but $\Sigma \subseteq \Theta$], then [still] for any $B$ such that $\Sigma \vdash B$, $\Theta \vdash B$. So if $B \in Cl(\Sigma)$, then $B \in Cl(\Theta)$.\\
+Hence $Cl(\Sigma) \subseteq Cl(\Theta)$. By \textbf{(ii)}, and the hypothesis that $\Theta$ is closed, then, $Cl(\Sigma) \subseteq \Theta$.
+
+
+\section*{15.17 Prove the second part of Proposition 11.3}
+For each $n$,\\
+(ii) Q $\vdash \forall x(x < \overline{n} \vee x = n \vee \overline{n} < x)$\\\\
+\textbf{Base case:} For 0, (ii) clearly holds, since by Q1, $\forall x (Sx \neq 0)$, so either $\overline{n}=0$ or $\overline{n} > 0$.\\\\
+\textbf{Inductive step:} Suppose the proposition holds for $k$. Showing that it holds for $Sk$:\\
+Now $k<\overline{n}$,  $k=\overline{n}$, or $k>\overline{n}.$\\\\
+If $k<\overline{n}$, by Q8 (and Q1) $n = k + g$ for some nonzero $g$. So $g$ in turn is $l +1$.\\
+So $Sk \leq \overline{n}$, since it may be that $l=0$ and it may be that $l \neq 0$. So for $Sk$ when $k<\overline{n}$, the proposition (ii) holds.\\\\
+If $k = \overline{n}$, then by Q8 $Sk > \overline{n}$, since $S0 + n = Sk$. Proposition (ii) again holds.\\\\
+If $k > \overline{n}$, then $Sk > \overline{n}$, since by Q8, $Sk > k [Sk = S0 +k].$ So by transitivity, $Sk > \overline{n}$ and the proposition is satisfied.
+    
+
+\section*{15.18 Complete the proof of Lemma 12.2}
+\textbf{Lemma 12.2} Let $\Sigma$ be a consistent theory containing Q. Then the set of
+$\Sigma$'s theorems, $Cl(\Sigma)$, is not representable in $\Sigma$.\\\\
+That is: There is no formula THMΣ$_\Sigma(x)$ of the language of $\Sigma$ such that,
+whenever $\Sigma$ proves A, it also proves THM$_\Sigma(\ulcorner A \urcorner$), and whenever it does
+not prove $A$, it proves $\neg$THM$_\Sigma(\ulcorner A \urcorner)$.\\\\
+Proof. Suppose there were such a formula. Then by the diagonal lemma
+there is a formula $G$ such that
+$\Sigma \vdash G \equiv \neg$THM$_\Sigma(\ulcorner G \urcorner$)...\\
+\section*{15.9 Prove Proposition 13.4 in full generality}
+Let us
+abbreviate $\exists y($BEW$_\Sigma(y, x))$ as: PRV$_\Sigma(x)$\\\\
+Hilbert-Bernays-L\"ob derivability conditions:\\
+\textbf{D1:} If $A$ is $\Sigma$-provable, then $\Sigma \vdash $PRVΣ$_\Sigma(\ulcorner A \urcorner)$\\
+\textbf{D2:} $\Sigma \vdash$ PRV$_\Sigma(x)(\ulcorner A \rightarrow B \urcorner) \wedge$ PRV$_\Sigma(\ulcorner A \urcorner) \rightarrow$ PRV$_\Sigma(\ulcorner B \urcorner)$\\
+\textbf{D3:} $\Sigma \vdash $PRV$_\Sigma(\ulcorner A \urcorner) \rightarrow $PRV$_\Sigma(\ulcorner$PRV$_\Sigma(\ulcorner A \urcorner)\urcorner)$\\\\
+
+\textbf{Proposition 13.4} Let $\Sigma$ be a consistent formal theory that proves (D1)
+and (D2). Then if $A_1, . . . , A_n$ logically imply $B$, $\Sigma$ proves:
+PRV$_\Sigma(\ulcorner A_1 \urcorner) \wedge$ . . . $\wedge $ PRV_\Sigma(\ulcorner A_n \urcorner) \rightarrow $PRV$_\Sigma(\ulcorner B \urcorner$)\\\\
+Suppose $A_1, . . ., A_n$ logically imply $B$. By the completeness theorem, $A_1, . . ., A_n \vdash B$.\\
+Now, by D1, $A_1, . . ., A_n \vdash $PRVΣ$_\Sigma(\ulcorner B \urcorner)$, and for all $A_i$ in $A_1, ..., A_n$:\\ $A_1, . . ., A_n \vdash $PRVΣ$_\Sigma(\ulcorner A_i \urcorner)$.\\\\
+\textbf{Proving Proposition 13.4 by induction:}\\
+$A_1, . . ., A_n$ logically imply $B$, and by the completeness theorem, $A_1, . . ., A_n \vdash B$.\\\\ \textbf{Base case:} $A_1 \models B$ is assumed, so by completeness $A_1 \vdash B$. Then, by the syntactic deduction theorem, $\Sigma \vdash A_1 \rightarrow B$. Then, by D1, $\Sigma \vdash $PRVΣ$_\Sigma(\ulcorner A_1 \rightarrow B\urcorner)$. Since $A_1 \vdash A_1$, and by D1, $\Sigma \vdash PRV$_\Sigma(\ulcorner A_1 \urcorner)$: by D2, $\Sigma \vdash$ PRV$_\Sigma(\ulcorner A_1 \urcorner)$ $\rightarrow$ PRV$_\Sigma(\ulcorner B \urcorner)$.  \\\\
+\textbf{Inductive step:} Suppose $\Sigma$ proves that (if $A_1, . . ., A_n$ implies $B$,) $\Sigma$ proves PRV$_\Sigma(\ulcorner A_1 \urcorner) \wedge$ . . . $\wedge $ PRV_\Sigma(\ulcorner A_n \urcorner) \rightarrow $PRV$_\Sigma(\ulcorner B \urcorner$).\\ Showing that the same holds for $A_1, . . ., A_n, A_n_+_1$:\\
+By the deduction theorem, $A_1, . . ., A_n, A_n_+_1 \vdash B$ iff $A_1, . . ., A_n \vdash A_n_+_1 \rightarrow B$.\\ \\
+Then, by D1, $A_1, . . ., A_n \vdash $PRVΣ$_\Sigma(\ulcorner A_n_+_1 \rightarrow B\urcorner)$. Since by D1 \Sigma \vdash PRV$_\Sigma(\ulcorner A_n_+_1 \urcorner)$: by D2, $\Sigma \vdash$ PRV$_\Sigma(\ulcorner A_n_+_1 \urcorner)$ $\rightarrow$ PRV$_\Sigma(\ulcorner B \urcorner)$.\\\\
+Now, by the inductive hypothesis (if $A_1, . . ., A_n$ implies $B$) $\Sigma$ proves PRV$_\Sigma(\ulcorner A_1 \urcorner) \wedge$ . . . $\wedge $ PRV_\Sigma(\ulcorner A_n \urcorner) \rightarrow $PRV$_\Sigma(\ulcorner B \urcorner$).\\\\
+So if $B$ here [in the previous line] stands for PRV$_\Sigma(\ulcorner A_n_+_1 \urcorner)$ $\rightarrow$ PRV$_\Sigma(\ulcorner B \urcorner)$, then $\Sigma$ proves PRV$_\Sigma(\ulcorner A_1 \urcorner) \wedge$ . . . $\wedge $ PRV_\Sigma(\ulcorner A_n \urcorner) \rightarrow PRV$_\Sigma(\ulcorner A_n_+_1 \urcorner)$ $\rightarrow$ PRV$_\Sigma(\ulcorner B \urcorner)$). 
+
+
+
+\end{document}

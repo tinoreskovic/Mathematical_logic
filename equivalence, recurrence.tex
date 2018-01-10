@@ -1,0 +1,99 @@
+\documentclass{article}
+\usepackage[utf8]{amssymb}
+\usepackage{dsfont}
+\usepackage{yfonts}
+\usepackage{marvosym}
+\usepackage{ tipa }
+\usepackage{hyperref}
+\usepackage{ textcomp }
+\title{Philosophy 1885: Problem Set 3}
+\author{Tin Oreskovic}
+\date{March 4th 2017}
+\begin{document}
+\maketitle
+\section*{2.1}
+Definition for objectual identity in second-order logic:\\\\
+$a = b \equiv$ $\forall F (Fa \rightarrow Fb)$\\\\
+\\\textbf{(i)  Show that this definition is equivalent to the apparently stronger definition}\\\\
+$a = b \equiv$ $\forall F (Fa \equiv Fb)$\\\\
+Showing first, informally, that:\\
+$a=b \rightarrow \Phi(a) \rightarrow \Phi(b)$, where  $\Phi(b)$ is generated from $\Phi(a)$ by replacing all occurrences of $a$ with occurrences of $b$\\\\
+(1) Suppose $a=b$ and $\Phi(a)$\\
+(2) $a = b \equiv$ $\forall F (Fa \rightarrow Fb)$\\
+(3) $a = b \rightarrow$ $\forall F (Fa \rightarrow Fb)$\\
+(4) $\neg(a=b) \vee \forall F (Fa \rightarrow Fb)$  from (2)\\
+(5) $\neg(a=b) \vee (\neg Fa \vee Fb)$ from 4\\
+(6) $\neg(a=b) \vee (\neg \Phi(a) \vee \Phi(b))$\\
+(7) $\Phi(b)$ from (1), (2), and (6)
+\\\\
+Showing that a=a\\\\
+$a = a \equiv$ $\forall F (Fa \rightarrow Fa)$ (instance of the definition)\\
+Since the right side of the biconditional is a tautology:\\
+$a = a$ \\\\
+Let $\Phi(a)$ be $a=a$ and $\Phi(b)$ be $b=a$.\\
+Now, using the schema $a=b \rightarrow \Phi(a) \rightarrow \Phi(b)$: \\
+$a=b \rightarrow a=a \rightarrow b=a$\\
+But then, by logic (since $a \rightarrow b \rightarrow c$ is equivalent to $b \rightarrow a \rightarrow c$):\\
+$a=a \rightarrow a=b \rightarrow b=a$\\
+We know that $a=a$, so $a=b \rightarrow b=a$, and since a similar proof shows the other direction: $a=b \equiv b=a$\\\\
+Finally, instantiating the definition:
+$a = b \equiv$ $\forall F (Fa \rightarrow Fb)$\\
+But $a=b \equiv b=a$, and since  $b = a \equiv$ $\forall F (Fb \rightarrow Fa)$\\ and the biconditional is transitive:\\\
+$a = b \equiv$ ($\forall F (Fa \rightarrow Fb)$ $\wedge$ $\forall F (Fb \rightarrow Fa)$\\
+So $a = b \equiv$ ($\forall F (Fa \equiv Fb)$\\\\
+\\\textbf{(ii)}\\
+$a=a$\\
+$a=b \rightarrow b=a$\\
+$a=b \wedge b=c \rightarrow a=c$\\\\
+Showing that a=a, similar to the above in (i):\\
+$a = a \equiv$ $\forall F (Fa \equiv Fa)$ (instance of the definition)\\
+Since the right side of the biconditional is a tautology:\\
+$a = a$ \\\\
+$a=b \rightarrow b=a$:\\
+(1) $a=b$\\	
+(2) $\forall F (Fa \equiv Fb)$, from the definition: $a = b \equiv$ $\forall F (Fa \equiv Fb)$ and (1) \\
+(3) $\forall F (Fb \equiv Fa)$\\
+(4) $b=a$, from (3) and the definition\\\\
+$a=b \wedge b=c \rightarrow a=c$\\
+(1) $a=b \wedge b=c$\\
+(2) $\forall F (Fa \equiv Fb)$\\
+(3) $(Fa \equiv Fb)$\\
+(4) $\forall F (Fb \equiv Fc)$\\
+(5) $(Fb \equiv Fc)$\\
+(6) $(Fa \equiv Fc)$, since the biconditional is transitive\\
+(7) $\forall F (Fa \equiv Fc)$\\
+(8) $a=c$, from the definition\\
+\section*{2.2 \quad prove that $x < y$ is recursive}
+\\showing that ``monus'' is recursive:\\
+first showing that the following ``preecessor'' function is recursive:\\
+pre$(n)$ = $\{ 0, \quad$ when $n = 0 \\$$\qquad n-1, $ when $ n > 0\}$\\\\\\
+pre$(n)$ = $\{ Zero(n), \quad$ when $n = 0 \\$$\qquad projection_1(n-1,\quad pre (n-1)),  $ when $ n > 0\}$\\\\
+Then: & $n \mathop {\dot -} m = \{n, \quad$ when $m = 0 \\$$\qquad pre(n \mathop {\dot -} (m - 1),\qquad$ when $m > 0\}$\\\\
+Finally, showing that the characteristic function $\varphi$ of the $x<y$ relation is recursive:\\
+$\varphi(x,y) \quad = \quad  monus(y,x) - pre(monus(y,x))$\\
+that is, $monus(monus(y,x); pre(monus(y,x)))$ \\
+
+
+\section*{2.3}\\
+\textbf{Show that $\beta(x,y)$ is recursive} \\\\
+First, addition is recursive:
+$x+0=x$ and $x+ S(y)= S(x+y)$\\
+Now, $\beta$ can be defined thus:\\
+$\beta(x,y) \quad = \quad \varphi(1;\quad \varphi(0,x) + \varphi(0,y)) \quad$ where $\varphi$ is the (recursive) characteristic function of the ``$x < y$'' relation\\\\
+\textbf{Show that $\gamma(x,y)$ is recursive}
+$\gamma(x,y)\quad = \quad \varphi(0; monus(x,y) + monus (y,x))$$ \quad$ where $\varphi$ is the (recursive) characteristic function of the ``$x < y$'' relation\\\\
+\section*{2.5}
+\textbf{(i)}\\
+If we try to code the sequence $<2,0,2>$ G\"odel's way, we get $2_2 \times 3_0 \times 5_2 = 100$. But his definition of $n$Gl$s$ tells us that $1$Gl$100 = 2$, $2 $Gl$ 100 = 2$, and $3$Gl$100 = 0$, which is wrong. Explain why.\\\\
+The second term of the sequence, according to $n$Gl$s$, turns out to be 2, instead of 0. This is because 2 is the least number smaller than 100 such that 100 is divisible by the $2$nd prime factor of 100 raised to that same number, but not raised to its successor. This definition involves G\"odel's definition of the $n$th prime factor of a number ``$nPrx$'', a notion that is not defined when $n=0$.\\\\
+\textbf{(ii)}\\\\
+$nGlx \equiv \varepsilon y [S(y)\leq x \wedge x\textfractionsolidus (nPrx)^S^(^y^) \wedge \neg(x\textfractionsolidus (nPrx)^S^(^S^(^y^)^))$\\\\
+\textbf{(iii)}\\
+All non-prime integers greater than 1 code sequences.\\\\
+\textbf{(iv)}\\
+Show that $\delta(x,y)$, the characteristic function of the equality relation, is recursive:\\
+$\delta(x,y)\quad = \quad \varphi( monus(x,y) + monus (y,x); 1)$$ \quad$ where $\varphi$ is the (recursive) characteristic function of the ``$x < y$'' relation\\\\
+The characteristic function of the set of prime numbers, call it $\rho$, is also recursive (G\"odel's text). \\\\
+Defining the property of being a number that codes a sequence:\\
+$monus(\quad \varphi(\rho(x),1);\quad (\delta(0,x)+\delta(1,x)))$\
+\end{document}

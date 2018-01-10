@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage[utf8]{amssymb}
+\usepackage{dsfont}
+\usepackage{yfonts}
+\usepackage{marvosym}
+\usepackage{ tipa }
+\usepackage{hyperref}
+\usepackage{ textcomp }
+\usepackage{ tipa }
+\title{Philosophy 1885: Problem Set 4}
+\author{Tin Oreskovic}
+\date{March 13th 2017}
+\begin{document}
+\maketitle
+\section*{Exercise 2.7.}
+Definitions (24) - (30) lead up to the crucial definition at (31) of substitution. Explain what each one of (25) - (31) means:\\\\
+\textbf{25:} The occurrence of the variable $v$ at the $n^{th}$ place in formula $x$ is free if $v$ is the $n^{th}$ term of the number sequence assigned to the number $x$, $n$ is smaller than the length of that number sequence, and the variable $v$, if it occurs at the $n^{th}$ place in $x$, is not bound in $x$ (as in the explanation of (24)).  \\\\
+\textbf{26:} The variable $v$ occurs in the formula $x$ as a free variable if $v$ occurs free at any place $n$ of $x$ (so long as $n$ is smaller than the length of the sequence assigned to $x$).\\\\
+\textbf{27:} $z$ is $Su x (^{n}_{y})$ if it is a concatenation of some $u$, the $y$, and some $v$ (both $u$ and $y$ lesser than $x$), such that $x$ itself is a concatenation of that same $u$ with the ``unary'' sequence corresponding to the $n^{th}$ term in the sequence corresponding to $x$. Then the $y$ that is getting ``inserted'' instead of the $n^{th}$ term of $x$ replaces the G\"odel number of the $n^{th}$ term in the sequence correpsonding to $x$\\\\
+\textbf{28:} For $0$, $0Stv$ is the first place $n$ of $x$ (smaller than the length of the sequence corresponding to $x$) where the variable $v$ occurs free in $x$, and such that there is no other place $n<p$ of $x$ such that the variable $v$ occurs free at the $p_{th}$ place. Hence, since there is no such $p$, the $n_{th}$ place of $x$ is also the last place where $v$ can occur free in $x$ (and the first counted from the right end).\\\\
+For $k+1$, $(k+1)St v$ is the first place in $x$ (counting from the left) where $v$ occurs free preceding from the left the $k+1^{th}$ place (counting from the right) in $x$ where $v$ occurs free, such that there is no place $p$ after $n$ in $x$ (counting from the left) but before the $k+1^{th}$ place where $v$ occurs free. So since there is no place ``between'' where $v$ occurs free in $x$, this specifies the $k+2^{nd}$ place counting from the right end.\\\\\\
+\textbf{29:} The first place in $x$ counting from the right such that there is no later place where $v$ occurs free in $x$.\\ Because the definition specifies the $first$ such place, it will stop counting free occurrences as soon as there are no more left in the remaining part of the formula.\\\\
+\textbf{30:} $Sb_{0}$ is the result of replacing the $0^{th}$ free occurrence of $v$ in $x$ by $y$, and it is of course just $x$\\\\
+$Sb_{k+1}$, i.e., the result of replacing the $k+1^{th}$ free occurrence of $v$ in $x$ by $y$ is obtained by:\\ replacing the $k+1^{th}$ free occurrence of $v$ (counting from the right end) by $y$ in the expression where the $k^{th}$  free occurrence of $v$ in $x$ has already been replaced by $y$.
+\\\\
+\textbf{31:} Apply (30) to the place (counting from the right end) in $x$ corresponding to the number of free occurrences of $v$ in $x$. Reapplying this function to the result of itself until there are no more free occurrences of $v$ left will yield the previously mentioned $Subst(^{v}_{y})$, where every free occurrence of $v$ in $x$ is replaced by $y$.
+\section*{Exercise 2.8.}
+Relation 35, A1-Ax(x) defines that x is a G\"odel number that corresponds to an axiom defined by Axiom Schema II.1. \\\\
+$A{_2} - Ax(x) \equiv (\exists y, z) [y, z \leq x \quad \& \quad x = y$Imp$(y$Dis$z)]$\\\\
+$A{_3} - Ax(x) \equiv (\exists y,z) [y,z \leq x \quad \& \quad x = (y$Dis$z)$Imp$(z$Dis$y$)]$\\\\
+$A{_4} - Ax(x) \equiv (\exists y,z,t) [y,z,t \leq x \quad \& \quad x = (y$ Imp  $z)$ Imp $((t$Dis$y)$Imp$\quad (t$Dis$z))$]$ 
+\section*{Exercise 2.9.}
+\textbf{\large(i)}\\\\
+Suppose that $x + y = z$.\\
+Suppose also that $y=0$ and $z=x$. Then $\langle x, 0, x\rangle$ and this is by \textbf{\large(i)} in every additive set.\\\\ 
+Now, suppose that $\langle x, y, z \rangle$ is in every additive set. By the second condition, since for every additive set A, $\langle x, y, z \rangle \in A \rightarrow \langle x, S(y), S(z) \rangle \in A$, it is also the case for $S(y)$ that $\langle x, S(y), S(z) \rangle \in A$. \\\\
+\textbf{\large(ii)}\\\\
+Since  $x+0=x$, clearly, condition is satisfied. For the second condition, take the second recursion equation for addition, i.e., $x+S(y)=S(x+y)$ and substitute $S(x)$ for $x$ to obtain:\\
+$x+S(S(y))=S(x+S(y)).$ Again by the second recursion equation for addition, the left hand side is equal to:\\
+$SS(x+y)$, \quad so $x+S(S(y))=SS(x+y)$, which meets the second condition for additive sets.
+\\\\
+\textbf{\large(iii)}\\\\
+\textbf{(a)}The set of $\langle x, y, z \rangle : x+y=z$ is a subset of every additive set, since [by \textbf{\large(i)}, if $x+y=z$ then $\langle x, y, z \rangle$ is in every additive set. Hence the intersection of all additive sets must be a superset of $\langle x, y, z \rangle : x+y=z$.\\\\
+\textbf{(b)}Now, since $\langle x, y, z \rangle : x+y=z$ is itself an additive set, and it does not contain any members other than $\langle x, y, z \rangle$ such that $x+y=z$, the intersection of all additive sets [by \textbf{(a)}] does not have any members other than $\langle x, y, z \rangle : x+y=z$.\\\\
+Defining sum$(x,y,z)\equiv \langle x, y, z \rangle \in \bigcap \{A: A $ is an additive set$\}$, we have:\\
+If $x + y = z$, then $\langle x, y, z \rangle : x+y=z$, so $\langle x, y, z \rangle \in \bigcap \{A: A $ is an additive set$\}$ and so, by the definition, \quad sum$(x,y,z)$.\\\\
+For the other direction, suppose sum$(x,y,z)$. Then, by the definition,$\langle x, y, z \rangle \in \bigcap \{A: A $ is an additive set$\}$. But the latter (set) is just the same as $\langle x, y, z \rangle : x+y=z$, so $\langle x, y, z \rangle \in \langle x, y, z \rangle : x+y=z$, so $x+y=z$.\\\\
+So sum$(x,y,z)$ iff $x+y=z$.
+\section*{Exercise 2.10.}
+\textbf{\large(i)} \\
+Say the set $A$ is `f' (for factorial) if it satisfies the following two conditions:\\\\\
+$\langle0, 1\rangle \in A$\\
+$\langle x, y\rangle \in A \rightarrow \langle S(x), S^{x}(0)  \times$...$\times S^{n(<x)}(0)$...$\times S(0) \rangle \in A $\\\\
+\textbf{corresponding to the first fact from 2.9:}\\
+If $x!=y$, then $\langle x, y \rangle$ is in every `f' set.\\\\
+Suppose $x!=y$. For $x=0$, $0!=1$, so  $\langle 0, 1 \rangle$, and by condition \textbf{\large(i)}, this is in every `f' set. 
+\\\\
+Suppose $\langle x, y \rangle$ is in every `f' set. By the second condition, since for every `f' set A, $\langle x, y \rangle \in A \rightarrow \langle S(x), S^{x}(0)  \times$...$\times S^{n(<x)}(0)$...$\times S(0) \rangle \in A $, it is also the case, for $S(y)$, that $\langle S(x), S^{x}(0)  \times$...$\times S^{n(<x)}(0)$...$\times S(0) \rangle \in A $.\\\\
+\textbf{corresponding to the second fact from 2.9:}\\
+Since  $0!=1$, the first condition is satisfied. For the second condition, take the second recursion equation for the factorial, i.e., $S(x)! = S^{x}(0)  \times$...$\times S^{n(<x)}(0)$...$\times S(0) \rangle \in A $ and substitute $S(x)$ for $x$ to obtain:\\
+$SS(x)! = SS^{x}(0)  \times$...$\times S^{x}(0)$...$\times S(0)$ Which is equal to:\\
+$S(x)! = S^{Sx}(0)  \times$...$S^{x}(0)$...$\times S(0)$, which meets the second condition for `f' sets.\\\\
+\textbf{Defining} factorial $(x,y)\equiv \langle x, y \rangle \in \bigcap \{A: A $ is an `f' set$\}$, we have:\\
+If $x!= y$, then $\langle x, y \rangle : x!=y$, so $\langle x, y \rangle \in \bigcap \{A: A $ is an `f' set$\}$ and so, by the definition, \quad factorial$(x,y)$.\\\\
+For the other direction, suppose factorial$(x,y)$. Then, by the definition,$\langle x, y \rangle \in \bigcap \{A: A $ is an `f' set$\}$. The latter (set) is just the same as $\langle x, y \rangle : x!=$, so $\langle x, y \rangle \in \langle x, y \rangle : x!=y$, so $x!=y$.\\\\
+So factorial$(x,y)$ iff $x!=y$.
+\section*{Exercise 2.11.}
+The successor function is definable in terms of addition, multiplication, and the logical symbols listed by G\"odel before the proof of theorem VII.\\ $Succ(x,y) \equiv\exists z \neg (\neg (x+z=y) \vee (\neg(z\times z=z) \vee (z+z=z))$ \\or in better terms with ``$\wedge$'':\\
+$Succ(x,y) \equiv \exists z ((x+z=y) \wedge ((z\times z=z) \wedge \neg(z+z=z))$\\\\
+The constant function:\\
+$C_{k}(x,y) \equiv \exists z(y = S^{k} ...$ $S^{n(<k)}$ $...$ $S(z) \wedge (z+z=z))$
+\section*{Exercise 2.12.}
+Let $G(x,y,z)$ represent g(x,y) and $F_1$ and $F_2$ represent $f_1$ and $f_2$, respectively.\\\\
+\textbf{(1)} Then, by assumption, $arithmetic \vdash G(\overline{a},\overline{b},\overline{y})$ and $arithmetic \vdash G(\overline{a},\overline{b},z) \rightarrow z = y$.\\
+\textbf{(2)} Also by assumption, $arithmetic \vdash F_{1}(\overline{x},\overline{a})$ and $arithmetic \vdash F_{1}(\overline{x},z) \rightarrow z = \overline{a}$, and analogously for $F_{2}$ (with $b$ substituted for $a$).\\\\
+From these formulas it follow that $\exists a \exists b([F_{1}(\overline{x},\overline{a}) \wedge F_{2}(\overline{x},\overline{b}) \wedge G(\overline{a},\overline{b},\overline{y})]$, so this formula, i.e., $H(x,y)$, is also representable in $arithmetic$:\\ Whenever $h(x) = y$, $arithmetic \vdash H(\overline{x},\overline{y})$ and, by \textbf{(1)}, \\$arithmetic \vdash H(\overline{x},z) \rightarrow z = \overline{y}$.
+\end{document}
